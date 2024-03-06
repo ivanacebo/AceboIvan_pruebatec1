@@ -24,59 +24,59 @@ Permite realizar operaciones básicas como agregar, listar, actualizar y elimina
 
 ## Explicación breve de la logica
 
-	**Métodos:**
-   		* `mostrarMenu`: Genera el menú que utilizará el usuario para interactuar.
-   		* `leerOpcion`: Lee la opción ingresada por el usuario y valida la entrada.
-   		* `agregarEmpleado`: Solicita al usuario los datos necesarios para agregar un empleado y los guarda en la base de datos.
-   		* `leerTextoNoVacio` y `esTextoValido`: Validan los datos introducidos por el usuario para campos como nombre, apellido y cargo.
-   		* `leerSalarioValido`: Verifica que el salario ingresado por el usuario sea válido.
-   		* `leerFechaValida`: Comprueba que la fecha ingresada por el usuario tenga un formato correcto.
-   		* `listarEmpleados`: Trae la lista completa de empleados de la empresa.
-   		* `actualizarEmpleado`: Permite la modificación de un empleado existente.
-   		* `eliminarEmpleado`: Elimina un empleado de la base de datos. Borrado logico modificando un atributo.
-   		* `buscarPorCargo`: Busca empleados por cargo.
-		
+**Métodos:**
+* `mostrarMenu`: Genera el menú que utilizará el usuario para interactuar.
+* `leerOpcion`: Lee la opción ingresada por el usuario y valida la entrada.
+* `agregarEmpleado`: Solicita al usuario los datos necesarios para agregar un empleado y los guarda en la base de datos.
+* `leerTextoNoVacio` y `esTextoValido`: Validan los datos introducidos por el usuario para campos como nombre, apellido y cargo.
+* `leerSalarioValido`: Verifica que el salario ingresado por el usuario sea válido.
+* `leerFechaValida`: Comprueba que la fecha ingresada por el usuario tenga un formato correcto.
+* `listarEmpleados`: Trae la lista completa de empleados de la empresa.
+* `actualizarEmpleado`: Permite la modificación de un empleado existente.
+* `eliminarEmpleado`: Elimina un empleado de la base de datos. Borrado logico modificando un atributo.
+* `buscarPorCargo`: Busca empleados por cargo.
+
 ## Supuestos técnicos
 
-	1. Se incorporan varias queries para traer datos de empleados según su cargo.
-	2. Se implementa el borrado lógico con un campo booleano en la clase Empleado.
-	3. Se asegura que los campos obligatorios nunca estén vacíos.
-	4. Se realizan comprobaciones para garantizar que los valores introducidos por el usuario sean adecuados.
-	5. Se implementa la estructura para el borrado lógico de empleados.
-	6. Se utiliza el principio de responsabilidad única en la creación de métodos.
-	7. Se manejan excepciones, como ParseException, en el método `leerFechaValida`.
-	8. Se repiten condiciones en algunos métodos para evitar errores.
+1. Se incorporan varias queries para traer datos de empleados según su cargo.
+2. Se implementa el borrado lógico con un campo booleano en la clase Empleado.
+3. Se asegura que los campos obligatorios nunca estén vacíos.
+4. Se realizan comprobaciones para garantizar que los valores introducidos por el usuario sean adecuados.
+5. Se implementa la estructura para el borrado lógico de empleados.
+6. Se utiliza el principio de responsabilidad única en la creación de métodos.
+7. Se manejan excepciones, como ParseException, en el método `leerFechaValida`.
+8. Se repiten condiciones en algunos métodos para evitar errores.
 
 ## Distintos escenarios considerados
 
-	1. **Eliminación de empleados por ID conocido:**  
-	En el caso más común, el usuario conoce el ID del empleado que desea eliminar. Se proporciona al usuario la información del ID al listar todos los empleados en pantalla.
+1. **Eliminación de empleados por ID conocido:**  
+En el caso más común, el usuario conoce el ID del empleado que desea eliminar. Se proporciona al usuario la información del ID al listar todos los empleados en pantalla.
 
-	2. **Inmutabilidad del ID en la base de datos:**  
-	Se garantiza al usuario que el ID de un empleado no puede ser modificado, ya que sirve como identificador único en la base de datos.
+2. **Inmutabilidad del ID en la base de datos:**  
+Se garantiza al usuario que el ID de un empleado no puede ser modificado, ya que sirve como identificador único en la base de datos.
 
-	3. **Prevención de duplicación de datos:**  
-	Se considera que el usuario debe evitar la duplicación de datos. En caso de confusión, se le ofrece la opción de eliminar empleados duplicados. Además, se proporciona la capacidad de listar empleados para verificar su existencia.
+3. **Prevención de duplicación de datos:**  
+Se considera que el usuario debe evitar la duplicación de datos. En caso de confusión, se le ofrece la opción de eliminar empleados duplicados. Además, se proporciona la capacidad de listar empleados para verificar su existencia.
 
-	4. **Gestión de empleados dados de baja:**  
-	Se contempla la posibilidad de que la empresa desee mantener un registro de empleados que ya no están activos. Se puede implementar una función para listar los empleados borrados de la base de datos, aprovechando el borrado lógico ya implementado.
+4. **Gestión de empleados dados de baja:**  
+Se contempla la posibilidad de que la empresa desee mantener un registro de empleados que ya no están activos. Se puede implementar una función para listar los empleados borrados de la base de datos, aprovechando el borrado lógico ya implementado.
 
-	5. **Manejo de excepciones:**  
-	Se utilizan bucles y comprobaciones para resolver problemas comunes, como la selección incorrecta de opciones en el menú. (Se incorpora una única excepción del sistema ParseException).
+5. **Manejo de excepciones:**  
+Se utilizan bucles y comprobaciones para resolver problemas comunes, como la selección incorrecta de opciones en el menú. (Se incorpora una única excepción del sistema ParseException).
 
 ### Solución para evitar la duplicidad de datos
 
-	Para prevenir la duplicación de datos, se propone agregar un nuevo atributo llamado "dni" a la clase Empleado. Se implementarán los métodos necesarios para validar y comparar el nuevo DNI con los existentes en la base de datos. En caso de encontrar una coincidencia, se informará al usuario y se mostrarán los datos del empleado asociado al DNI duplicado.
+Para prevenir la duplicación de datos, se propone agregar un nuevo atributo llamado "dni" a la clase Empleado. Se implementarán los métodos necesarios para validar y comparar el nuevo DNI con los existentes en la base de datos. En caso de encontrar una coincidencia, se informará al usuario y se mostrarán los datos del empleado asociado al DNI duplicado.
 
 
 ## Requisitos del sistema
 
-	- Java Development Kit (JDK) instalado en el sistema.
-	- Acceso a una base de datos relacional compatible (por ejemplo, MySQL, PostgreSQL, phpMyAdmin). Se añade archivo.sql con los datos de prueba del sistema de gestión de empleados.
-	- Instalación y configuración
-	- Clonar el repositorio desde GitHub.
-	- Configurar la conexión a la base de datos en el archivo de configuración correspondiente.
-	- Configuración del proyecto y ejecución desde un IDE de desarrollo.
+- Java Development Kit (JDK) instalado en el sistema.
+- Acceso a una base de datos relacional compatible (por ejemplo, MySQL, PostgreSQL, phpMyAdmin). Se añade archivo.sql con los datos de prueba del sistema de gestión de empleados.
+- Instalación y configuración
+- Clonar el repositorio desde GitHub.
+- Configurar la conexión a la base de datos en el archivo de configuración correspondiente.
+- Configuración del proyecto y ejecución desde un IDE de desarrollo.
 
 ## Contribuciones
 

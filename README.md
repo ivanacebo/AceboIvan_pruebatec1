@@ -1,4 +1,4 @@
-#Sistema de Gestión de Empleados
+# Sistema de Gestión de Empleados
 
 ## Descripción del proyecto
 
@@ -11,7 +11,6 @@ Permite realizar operaciones básicas como agregar, listar, actualizar y elimina
 **Persistencia de datos:** Se emplea una base de datos llamada "empleados", a la cual se conecta mediante JPA.
 **Lógica:** Capa donde se introduce la lógica del código. Incluye la clase Empleado, la clase controladora y los distintos métodos que se utilizarán para desarrollar el sistema.
 
-##Explicación del proyecto por modelo de capas
 ## Explicación del proyecto por modelo de capas
 
 **Persistencia ->** 
@@ -27,7 +26,7 @@ Permite realizar operaciones básicas como agregar, listar, actualizar y elimina
 	Recordemos que no usamos una interfaz gráfica como tal sino que introducimos un metodo ascii para que el usuario vaya interactuan y poder seguir la serie de pasos que este desee en este sistema.
 	En mi caso incorporo un bucle con bandera y un swicht en el que llamo a los metodos de la clase explicada anteriormente (Pregunta)
 
-##Explicación breve de la logica
+## Explicación breve de la logica
 
 	**Métodos:**
    		* `mostrarMenu`: Genera el menú que utilizará el usuario para interactuar.
@@ -41,7 +40,7 @@ Permite realizar operaciones básicas como agregar, listar, actualizar y elimina
    		* `eliminarEmpleado`: Elimina un empleado de la base de datos. Borrado logico modificando un atributo.
    		* `buscarPorCargo`: Busca empleados por cargo.
 		
-##Supuestos técnicos
+## Supuestos técnicos
 
 	1. Se incorporan varias queries para traer datos de empleados según su cargo.
 	2. Se implementa el borrado lógico con un campo booleano en la clase Empleado.
@@ -74,7 +73,7 @@ Permite realizar operaciones básicas como agregar, listar, actualizar y elimina
 	Para prevenir la duplicación de datos, se propone agregar un nuevo atributo llamado "dni" a la clase Empleado. Se implementarán los métodos necesarios para validar y comparar el nuevo DNI con los existentes en la base de datos. En caso de encontrar una coincidencia, se informará al usuario y se mostrarán los datos del empleado asociado al DNI duplicado.
 
 
-##Requisitos del sistema
+## Requisitos del sistema
 
 	- Java Development Kit (JDK) instalado en el sistema.
 	- Acceso a una base de datos relacional compatible (por ejemplo, MySQL, PostgreSQL, phpMyAdmin). Se añade archivo.sql con los datos de prueba del sistema de gestión de empleados.

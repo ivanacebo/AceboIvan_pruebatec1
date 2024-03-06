@@ -22,10 +22,6 @@ Permite realizar operaciones básicas como agregar, listar, actualizar y elimina
    * La clase Controladora actúa como nexo entre la capa de persistencia y la capa de la interfaz gráfica. Aquí se hacen llamadas a la controladora de persistencia y se utilizan los métodos previamente creados. Además, se definen otros métodos necesarios para el sistema.
    * Se añade una clase Pregunta en este paquete de lógica, donde se encuentran los métodos utilizados en la interfaz ASCII generada. Incluye funciones para mostrar menús, leer la entrada del usuario y realizar ciertas validaciones.
 
-**Interfaz gráfica ->** 
-	Recordemos que no usamos una interfaz gráfica como tal sino que introducimos un metodo ascii para que el usuario vaya interactuan y poder seguir la serie de pasos que este desee en este sistema.
-	En mi caso incorporo un bucle con bandera y un swicht en el que llamo a los metodos de la clase explicada anteriormente (Pregunta)
-
 ## Explicación breve de la logica
 
 	**Métodos:**

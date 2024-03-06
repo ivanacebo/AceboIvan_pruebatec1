@@ -64,7 +64,7 @@ Permite realizar operaciones básicas como agregar, listar, actualizar y elimina
 	5. **Manejo de excepciones:**  
 	Se utilizan bucles y comprobaciones para resolver problemas comunes, como la selección incorrecta de opciones en el menú. (Se incorpora una única excepción del sistema ParseException).
 
-	### Solución para evitar la duplicidad de datos
+### Solución para evitar la duplicidad de datos
 
 	Para prevenir la duplicación de datos, se propone agregar un nuevo atributo llamado "dni" a la clase Empleado. Se implementarán los métodos necesarios para validar y comparar el nuevo DNI con los existentes en la base de datos. En caso de encontrar una coincidencia, se informará al usuario y se mostrarán los datos del empleado asociado al DNI duplicado.
 
